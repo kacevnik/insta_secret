@@ -36,7 +36,7 @@ a{
   font-weight: bold;
   border-right: 2px solid #fff;
   padding: 0 10px 0 0;
-  margin: 0 0 0 20px;
+  margin-left: -10px;
 }
 
 .top_login{
@@ -53,4 +53,105 @@ a{
 .top_login a:hover{
   color: #ffffff;
   text-decoration: none;
+}
+
+header{
+  background: #ffffff;
+  min-height: 63px;
+}
+
+.logo img{
+  width: 80%;
+}
+.logo{
+  margin-left: 20px;
+}
+
+.nav a{
+  color: #000000;
+  font-size: 20px;
+  padding: 10px 8px;
+  text-transform: uppercase;
+}
+
+.nav a:hover{
+  text-decoration: none;
+  position: relative;
+  top: -3px;
+}
+
+.nav ul{
+  list-style: none;
+  margin-top: 17px;
+}
+
+.search{
+  text-align: right;
+}
+
+.input_serch{
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    margin-top: 16px;
+    padding: 2px 10px;
+}
+
+.nav ul li{
+  float: left;
+}
+
+.input_serch[type="text"]:focus { outline: none; border: 1px solid #949494;}
+.intro_bg{
+  min-height: 380px;
+  background: url(../img/intro_bg.jpg)no-repeat;
+  background-size: cover;
+  background-position-y: -100px;
+}
+
+.intro_bg h1, .intro_bg h2{
+  text-transform: uppercase;
+  text-align: center;
+  color: #d9d9d9;
+}
+
+.intro_bg h1{
+    font-family: Impact;
+    font-size: 120px;
+    margin: 40px 0 0 0;
+}
+
+.intro_bg h2{
+    font-weight: bold;
+    margin: 0 0 0 0;
+    font-size: 22px;
+    color: #ececec;
+}
+
+.intro_more{
+  text-align: center;
+  margin: 77px 0 0 0;
+}
+
+.intro_more a{
+  text-transform: uppercase;
+  color: #ffffff;
+  font-size: 16px;
+  padding: 10px 15px;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#15aece+0,15ccde+100 */
+  background: #15aece; /* Old browsers */
+  background: -moz-linear-gradient(45deg,  #15aece 0%, #15ccde 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(45deg,  #15aece 0%,#15ccde 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(45deg,  #15aece 0%,#15ccde 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#15aece', endColorstr='#15ccde',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+
+.intro_more a:hover{
+  text-decoration: none;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#15ccde+0,15aece+100 */
+background: #15ccde; /* Old browsers */
+background: -moz-linear-gradient(45deg,  #15ccde 0%, #15aece 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(45deg,  #15ccde 0%,#15aece 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(45deg,  #15ccde 0%,#15aece 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#15ccde', endColorstr='#15aece',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
 }
