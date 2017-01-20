@@ -1,0 +1,47 @@
+a{
+  color: #ffffff;
+}
+
+.top{
+  background: #000000;
+  color: #ffffff;
+  height: 35px;
+  vertical-align: middle;
+}
+
+.top_list_info{
+  text-align: left;
+}
+
+.top_list_info ul{
+  list-style: none;
+  margin-top: 7px;
+  font-size: 16px;
+}
+
+.top_list_info ul li{
+  float: left;
+}
+
+.phone_top{
+  font-weight: bold;
+  border-right: 2px solid #fff;
+  padding: 0 10px 0 0;
+  margin: 0 0 0 20px;
+}
+
+.top_login{
+    text-align: right;
+    font-weight: bold;
+    margin-top: 7px;
+    padding: 0 20px 0 0;
+}
+
+.top_login a{
+  color: #a8ada9;
+}
+
+.top_login a:hover{
+  color: #ffffff;
+  text-decoration: none;
+}
