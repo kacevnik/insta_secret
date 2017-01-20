@@ -23,6 +23,15 @@ a{
   float: left;
 }
 
+.top_list_info ul li a{
+  margin-left: 10px;
+}
+
+.top_list_info ul li a:hover{
+  color: #ffffff;
+  font-size: 17px;
+}
+
 .phone_top{
   font-weight: bold;
   border-right: 2px solid #fff;
