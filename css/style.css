@@ -282,6 +282,33 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#15ccde', end
   text-transform: uppercase;
   font-size: 18px;
   font-weight: bold;
+  position: relative;
+}
+
+.title_post:after{
+  border-radius: 2px;
+  content: "";
+  height: 4px;
+  width: 23%;
+  position: absolute;
+  bottom: -8px;
+  left: 8px;
+}
+
+.color_1:after{
+  background-color: #fba51a;
+}
+
+.color_2:after{
+  background-color: #ab2173;
+}
+
+.color_3:after{
+  background-color: #6d166f;
+}
+
+.color_4:after{
+  background-color: #1b3463;
 }
 
 .item_line{
