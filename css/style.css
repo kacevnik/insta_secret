@@ -352,3 +352,24 @@ footer{
   text-decoration: none;
   top: -2px
 }
+
+.hide_menu, .close_tap, .hide_search, .search_nav{
+  display: none;
+}
+
+.hide_search{
+  padding: 20px 0 33px;
+  background: url(../img/top_shadow.png) no-repeat top;
+  text-align: center;
+}
+
+.hide_search .input_serch{
+  padding: 6px 10px;
+  font-size: 20px;
+  border-radius: 20px;
+}
+
+.hide_search i{
+  font-size: 24px;
+  margin-right: 6px;
+}
