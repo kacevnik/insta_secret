@@ -2,6 +2,7 @@
 /**
  * Шаблон шапки (header.php)
  */
+	$theme_options = get_option('option_name');
 ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); // вывод атрибутов языка ?>>
@@ -89,21 +90,23 @@ analytics.page()
         <div class="header-container">
             <div class="header-socials">
                 <p class="phone">
-                    <a href='tel://1-800-488-6040' class='phonenumber'><span class='mm-phone-number'>1-800-488-6040</span><i class='fa fa-fw fa-lg fa-phone'></i></a>
+                    <a href='<?php echo $theme_options['kdv_phone_header']; ?>' class='phonenumber'><span class='mm-phone-number'><?php echo $theme_options['kdv_phone_header']; ?></span><i class='fa fa-fw fa-lg fa-phone'></i></a>
                 </p><!-- /.phone -->
 
                 <ul>
+                	<?php if($theme_options['kdv_facebook_header'] != ''){ ?> 
                     <li>
-                        <a href="https://www.facebook.com" target="_blank">
-                            <i class="icon-facebook"></i>
+                        <a href="<?php echo $theme_options['kdv_facebook_header']; ?>" target="_blank">
+                            <i class="fa fa-facebook"></i>
                         </a>
                     </li>
-
+					<?php } if($theme_options['kdv_tvit_header'] != ''){ ?> 
                     <li>
-                        <a href="https://twitter.com/tonyrobbins" target="_blank">
-                            <i class="icon-twitter"></i>
+                        <a href="<?php echo $theme_options['kdv_tvit_header']; ?>" target="_blank">
+                            <i class="fa fa-twitter"></i>
                         </a>
                     </li>
+                    <?php } ?>
                 </ul>
             </div><!-- /.socials -->
 

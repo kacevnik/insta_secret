@@ -4,7 +4,7 @@
  * @package WordPress
  * @subpackage your-clean-template-3
  */
-
+include('settings.php');
 add_theme_support('title-tag'); // теперь тайтл управляется самим вп
 
 register_nav_menus(array( // Регистрируем 2 меню
