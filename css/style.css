@@ -1,11 +1,4 @@
-/*!
- * Theme Name: Tony Robbins Theme
- * Theme URI: https://www.tonyrobbins.com
- * Description: A new brand. A new template.
- * Author: Paul Jayson Lopez
- * Author URI: http://paujayson.info
- * Version: 1.0
- */
+
 @import url(fonts/stylesheet.css);
 /* line 12, ../sass/style.scss */
 html {
@@ -6387,3 +6380,5 @@ html body .sumome-share-client-wrapper div.sumome-share-client.sumome-share-clie
     .page-template-contact #hero-general {
         height: 25vh;
     }
+
+    #wpadminbar{display: none;}
