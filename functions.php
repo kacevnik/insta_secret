@@ -60,6 +60,49 @@ if (!class_exists('clean_comments_constructor')) { // если класс уже
 	}
 }
 
+ // добавляет вызов функции при инициализации административного раздела
+add_action('admin_init', 'category_custom_fields', 1);
+// функция расширения функционала административного раздела
+function category_custom_fields()
+    {
+        // добавления действия после отображения формы ввода параметров категории
+        add_action('edit_category_form_fields', 'category_custom_fields_form');
+        // добавления действия при сохранении формы ввода параметров категории
+        add_action('edited_category', 'category_custom_fields_save');
+    }
+
+function category_custom_fields_form($tag)
+    {
+        $t_id = $tag->term_id;
+        $cat_meta = get_option("category_$t_id");
+?>
+        <tr class="form-field">
+        <th scope="row" valign="top"><label for="extra1"><?php _e('Цвет для фонов постов'); ?></label></th>
+        <td>
+        <input placeholder="ffffff" type="text" name="Cat_meta[cat_color]" id="Cat_meta[cat_color]" size="25" style="width:60%;" value="<?php echo
+        $cat_meta['cat_color'] ? $cat_meta['cat_color'] : ''; ?>"><br />
+                    <span class="description"><?php _e('Укажите цвет в HEX формате для заднего фона и полоски постов при показе в блоге для данной рубрики.'); ?></span>
+                </td>
+        </tr>
+        <?php
+    }
+    
+function category_custom_fields_save($term_id)
+    {
+        if (isset($_POST['Cat_meta'])) {
+            $t_id = $term_id;
+            $cat_meta = get_option("category_$t_id");
+            $cat_keys = array_keys($_POST['Cat_meta']);
+            foreach ($cat_keys as $key) {
+                if (isset($_POST['Cat_meta'][$key])) {
+                    $cat_meta[$key] = $_POST['Cat_meta'][$key];
+                }
+            }
+            //save the option array
+            update_option("category_$t_id", $cat_meta);
+        }
+    }
+
 if (!function_exists('pagination')) { // если ф-я уже есть в дочерней теме - нам не надо её определять
 	function pagination() { // функция вывода пагинации
 		global $wp_query; // текущая выборка должна быть глобальной

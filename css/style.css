@@ -10,11 +10,21 @@
 }
 /* font-family: "ProximaNovaBold"; */
 @font-face {
-    font-family: "ProximaNovaBold";
-    src: url("../fonts/ProximaNovaBold/ProximaNovaBold.eot");
-    src: url("../fonts/ProximaNovaBold/ProximaNovaBold.eot?#iefix")format("embedded-opentype"),
-    url("../fonts/ProximaNovaBold/ProximaNovaBold.woff") format("woff"),
-    url("../fonts/ProximaNovaBold/ProximaNovaBold.ttf") format("truetype");
+    font-family: "proxima_nova_extrabold";
+    src: url("../fonts/ProximaNovaBold.eot");
+    src: url("../fonts/ProximaNovaBold.eot?#iefix")format("embedded-opentype"),
+    url("../fonts/ProximaNovaBold.woff") format("woff"),
+    url("../fonts/ProximaNovaBold.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "proxima_nova_bold";
+    src: url("../fonts/ProximaNovaBold.eot");
+    src: url("../fonts/ProximaNovaBold.eot?#iefix")format("embedded-opentype"),
+    url("../fonts/ProximaNovaBold.woff") format("woff"),
+    url("../fonts/ProximaNovaBold.ttf") format("truetype");
     font-style: normal;
     font-weight: normal;
 }
