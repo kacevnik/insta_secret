@@ -81,7 +81,7 @@ function category_custom_fields_form($tag)
         <td>
         <input placeholder="ffffff" type="text" name="Cat_meta[cat_color]" id="Cat_meta[cat_color]" size="25" style="width:60%;" value="<?php echo
         $cat_meta['cat_color'] ? $cat_meta['cat_color'] : ''; ?>"><br />
-                    <span class="description"><?php _e('Укажите цвет в HEX формате для заднего фона и полоски постов при показе в блоге для данной рубрики.'); ?></span>
+                    <span class="description"><?php _e('Укажите цвет в HEX формате для заднего фона и полоски постов при показе в блоге для данной рубрики (без решетки #).'); ?></span>
                 </td>
         </tr>
         <?php

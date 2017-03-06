@@ -20,8 +20,8 @@ $new_class_cat = "cat_class_".$cat_id;
     	background-color: #<?php echo $cat_data['cat_color']; ?>;
 	}
 </style>
-<div  class="col-md-3 blog-item<?php echo " ".$new_class_cat; ?>">
 <?php } ?>
+<div class="col-md-3 blog-item<?php echo " ".$new_class_cat; ?>">
     <div class="box box-sm"  style="cursor:pointer;"  onclick="document.location='<?php the_permalink(); ?>'">
         <a href="<?php the_permalink(); ?>"></a>
         <img onload="titlePadding()"  src="<?php the_post_thumbnail_url(); ?>" alt="">
