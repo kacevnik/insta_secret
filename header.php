@@ -166,7 +166,7 @@ analytics.page()
             </div>
 
             <ul class="nav-logo">
-                <li><a href="/"><img src="https://www.tonyrobbins.com/wp-content/themes/tonyrobbins2016/images/tr-logo-blk-on-wht.svg"
+                <li><a href="<?php bloginfo( 'wpurl' ); ?>"><img src="<?php bloginfo( 'template_url' ); ?>/img/logo.jpg"
                                      alt="..."></a></li>
             </ul>
 
@@ -200,11 +200,11 @@ analytics.page()
         </div>
 
         <div class="hidden-search">
-            <h3>What can we help you find?</h3>
-            <form id="search-bar" method="get" action="https://www.tonyrobbins.com/">
+            <h3>Поис по сайту</h3>
+            <form id="search-bar" method="get" action="<?php echo home_url( '/' ); ?>">
   <label class="screen-reader-text" for="s"></label>
-  <input type="search" name="s" id="s" placeholder="Search for:" value="" >
-  <button class="btn" type="submit" id="searchsubmit" value="Search"><i class="fa fa-search"></i></button>
+  <input type="search" name="s" id="s" placeholder="Поиск..." value="<?php echo get_search_query() ?>" >
+  <button class="btn" type="submit" id="searchsubmit" value="Искать"><i class="fa fa-search"></i></button>
 </form>        </div>
     </nav>
 
@@ -266,10 +266,10 @@ analytics.page()
             </div>
         </div>
 
-        <form id="search-bar" method="get" action="https://www.tonyrobbins.com/">
+        <form role="search" id="search-bar" method="get" action="<?php echo home_url( '/' ); ?>">
   <label class="screen-reader-text" for="s"></label>
-  <input type="search" name="s" id="s" placeholder="Search for:" value="" >
-  <button class="btn" type="submit" id="searchsubmit" value="Search"><i class="fa fa-search"></i></button>
+  <input type="search" name="s" id="s" placeholder="Поиск..." value="<?php echo get_search_query() ?>" >
+  <button class="btn" type="submit" id="searchsubmit" value="Искать"><i class="fa fa-search"></i></button>
 </form>
         <div class="mobile-nav-container">
 							<?php $args = array( // опции для вывода верхнего меню, чтобы они работали, меню должно быть создано в админке
@@ -287,32 +287,15 @@ analytics.page()
 
     <section id="hero">
 
-  
-    <div class="preloader">
-      <div class="spinner">
-        <div class="bounce1"></div>
-        <div class="bounce2"></div>
-        <div class="bounce3"></div>
-      </div>
-    </div>
-    <div id="background" class="home-hero-image" style="background-image: url('https://s3.amazonaws.com/rri-tonyrobbins-com/wp-content/uploads/2016/03/01174040/Tony-In-Front-Power-Crowd-copy.jpg')"></div>
-    <div id="video-background" class="home-video">
-      <video preload="auto" autoplay loop muted volume="0">
-        <source src="" type="video/mp4" />
-      </video>
-    </div>
-
     <div class="container-fluid">
       <div class="row">
         <div class="col-xs-12">
-          <h1>Get Ready!</h1>
-          <p class="sub-text">Your Breakthrough Awaits...</p>
-
-
-                      <p>
-            <a id="header-cta-button" class="btn btn-lg" href="/events/unleash-the-power-within">See Tony Robbins Live!</a>
+          <h1>Приготовься</h1>
+          <p class="sub-text">Стать лучше</p>
+          <p>
+            <a id="header-cta-button" class="btn btn-lg" href="">Читать полезные материалы</a>
             </p>
-                            </div>
+        </div>
       </div>
     </div>
 
@@ -323,25 +306,31 @@ analytics.page()
     <div class="container-fluid">
       <div class="row">
         <div class="col-md-12 text-center center">
-          <p><span>Your 30 Minutes to Thrive</span> Sign Up for a Complimentary Results Coaching Session Today!</p>
-          <a id="subnav-cta-button" class="opt-in-form btn btn-md" href="#">Schedule Your Call</a> </div>
+          <p><span>Новый подробный чек-лист</span> Как не попасть в бан инстаграмм?</p>
+          <a id="subnav-cta-button" class="opt-in-form btn btn-md" href="#">Скачать</a> </div>
       </div>
     </div>
   </section>
-  
-  <!-- opt-in top form pop up -->
-    <div id="form" class="overlay hidden"> <a class="overlay-close" href="#"><i class="fa fa-times-circle fa-lg"></i></a>
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-md-6 text-center center">
-          <h2>Results Coaching</h2>
-          <p>Your 30 Minutes to Thrive</p>
-          <div class="embedded-marketo-form col-xs-10 center">
-            <script src="//app-sj03.marketo.com/js/forms2/js/forms2.min.js"></script>
-<form id="mktoForm_1373"></form>
-<script>MktoForms2.loadForm("//app-sj03.marketo.com", "299-KII-331", 1373);</script>
+
+  <section id="new-products">
+        <div id="product-carousel" class="carousel slide">
+
+    
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner">
+        <div class="item active">
+          <div class="center-slide">
+            <article class="content-right">
+              <h2>Новый видео урок по торгентинговой рекламе</h2>
+              <p>Пошаговая видеоинструкция по настройке, подготовке к запуску самого эффективного на данный момент способа продвижения инстаграм. Теперь и вам доступен инструмент профессионалов рекламы.</p>
+                              <a href="" class="btn">Смотреть <i class="fa fa-double-angle-right"></i></a>
+                          </article>
+            <img src="<?php bloginfo( 'template_url' ); ?>/img/bg-phone.png" alt="...">
           </div>
         </div>
+
+      
       </div>
-    </div>
-  </div>
+
+        </div> <!-- Carousel -->
+  </section>

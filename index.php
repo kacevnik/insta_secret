@@ -1,105 +1,27 @@
 <?php
 /**
  * Главная страница (index.php)
- * @package WordPress
- * @subpackage your-clean-template-3
  */
 get_header(); // подключаем header.php ?> 
-</head>
-<body class="home page-template page-template-template-front-page page-template-template-front-page-php page page-id-14333 page-tony-robbins-official-website-tony-robbins">
-
-
-  
-<section id="new-products">
-        <div id="product-carousel" class="carousel slide">
-
-    
-      <!-- Wrapper for slides -->
-      <div class="carousel-inner">
-        <div class="item active">
-          <div class="center-slide">
-            <article class="content-right">
-              <h2>Pre-Order Unshakeable Today</h2>
-              <p>Tony Robbins returns with a step-by-step playbook, taking you on a journey to transform your financial life and accelerate your path to financial freedom. No matter your salary, your stage of life, or when you started, this book will provide the tools to help you achieve your financial goals more rapidly than you ever thought possible.</p>
-                              <a href="http://store.tonyrobbins.com/products/unshakeable" class="btn">Pre-Order <i class="fa fa-double-angle-right"></i></a>
-                          </article>
-            <img src="https://s3.amazonaws.com/rri-tonyrobbins-com/wp-content/uploads/2017/01/25133946/unshakeable-promo.png" alt="...">
-          </div>
-        </div>
-
-      
-      </div>
-
-        </div> <!-- Carousel -->
-  </section>
-
-  <section id="quotes">
-    <!--<h3>What people are saying</h3>-->
-    <div id="quote-carousel" class="carousel slide">
-      <!-- Indicators -->
-      <ol class="carousel-indicators">
-        <li data-target="#quote-carousel" data-slide-to="0" class="active"></li>
-        <li data-target="#quote-carousel" data-slide-to="1"></li>
-        <li data-target="#quote-carousel" data-slide-to="2"></li>
-      </ol>
-
-      <!-- Wrapper for slides -->
-      <div class="carousel-inner">
-
-        <div class="item active">
-          <div class="center-slide">
-            <article class="content-left">
-              <i class="fa fa-quote-left"></i>
-              <p class="the-quote">It doesn't matter what social status you are—what level you think you are at—[Tony] rises you to the top of your capability.</p>
-              <p>&mdash;Usher</p>
-            </article>
-            <img src="https://www.tonyrobbins.com/wp-content/themes/tonyrobbins2016/images/quote-usher.png" alt="...">
-          </div>
-        </div>
-
-        <div class="item">
-          <div class="center-slide">
-            <article class="content-right">
-              <i class="fa fa-quote-left"></i>
-              <p class="the-quote">I feel on top of the world, I feel incredible, I feel motivated, I feel empowered and I know what this has already done and what it’s going to do. I am the master of my own destiny.</p>
-              <p>&mdash;Maria Menounos</p>
-            </article>
-            <img src="https://www.tonyrobbins.com/wp-content/themes/tonyrobbins2016/images/quote-maria.png" alt="...">
-          </div>
-        </div>
-
-        <div class="item">
-          <div class="center-slide">
-            <article class="content-left">
-              <i class="fa fa-quote-left"></i>
-              <p class="the-quote">Unleash the Power Within is ideal for a young audience, this is the way to start your life.</p>
-              <p>&mdash;Derek Hough</p>
-            </article>
-            <img src="https://www.tonyrobbins.com/wp-content/themes/tonyrobbins2016/images/quote-derek.png" alt="...">
-          </div>
-        </div>
-
-      </div>
-
-      <!-- Controls
-      <a class="left carousel-control" href="#quote-carousel" role="button" data-slide="prev">
-        <i class="fa fa-angle-left fa-2x"></i>
-      </a>
-      <a class="right carousel-control" href="#quote-carousel" role="button" data-slide="next">
-        <i class="fa fa-angle-right fa-2x"></i>
-      </a> -->
-    </div> <!-- Carousel -->
-  </section>
 
   <section id="latest-news">
     <div class="container">
       <div class="row">
         <div class="col-md-12 center">
-                      <h3>The Tony Robbins Blog</h3>
-          
-          
-                            
-              <div  class="col-md-3 blog-item CareerampBusiness">
+            <h3>Blog</h3>
+            	<h1><?php // заголовок архивов
+					if (is_day()) : printf('Daily Archives: %s', get_the_date()); // если по дням
+					elseif (is_month()) : printf('Monthly Archives: %s', get_the_date('F Y')); // если по месяцам
+					elseif (is_year()) : printf('Yearly Archives: %s', get_the_date('Y')); // если по годам
+					else : 'Archives';
+				endif; ?></h1>
+				<?php if (have_posts()) : while (have_posts()) : the_post(); // если посты есть - запускаем цикл wp ?>
+					<?php get_template_part('loop'); // для отображения каждой записи берем шаблон loop.php ?>
+				<?php endwhile; // конец цикла
+				else: echo '<p>Нет записей.</p>'; endif; // если записей нет, напишим "простите" ?>	 
+				<?php pagination(); // пагинация, функция нах-ся в function.php ?>
+
+          		<div  class="col-md-3 blog-item CareerampBusiness">
                 <div class="box box-sm"  style="cursor:pointer;"  onclick="document.location='https://www.tonyrobbins.com/career-business/power-user-personas/'">
                   <a href="https://www.tonyrobbins.com/career-business/power-user-personas/"></a>
                                       <img onload="titlePadding()"  src="https://s3.amazonaws.com/rri-tonyrobbins-com/wp-content/uploads/2017/01/26172759/User-personas_meeting-customers_blog-header_credit-shutterstock-tsyhun-525x525.jpg" alt="">
@@ -415,25 +337,4 @@ Old annoucnment code, commented out
 
 </body>
 </html>
-
-<section>
-	<div class="container">
-		<div class="row">
-			<div class="<?php content_class_by_sidebar(); // функция подставит класс в зависимости от того есть ли сайдбар, лежит в functions.php ?>">
-				<h1><?php // заголовок архивов
-					if (is_day()) : printf('Daily Archives: %s', get_the_date()); // если по дням
-					elseif (is_month()) : printf('Monthly Archives: %s', get_the_date('F Y')); // если по месяцам
-					elseif (is_year()) : printf('Yearly Archives: %s', get_the_date('Y')); // если по годам
-					else : 'Archives';
-				endif; ?></h1>
-				<?php if (have_posts()) : while (have_posts()) : the_post(); // если посты есть - запускаем цикл wp ?>
-					<?php get_template_part('loop'); // для отображения каждой записи берем шаблон loop.php ?>
-				<?php endwhile; // конец цикла
-				else: echo '<p>Нет записей.</p>'; endif; // если записей нет, напишим "простите" ?>	 
-				<?php pagination(); // пагинация, функция нах-ся в function.php ?>
-			</div>
-			<?php get_sidebar(); // подключаем sidebar.php ?>
-		</div>
-	</div>
-</section>
 <?php get_footer(); // подключаем footer.php ?>
