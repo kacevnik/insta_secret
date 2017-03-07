@@ -41,11 +41,12 @@ function plugin_settings(){
 	add_settings_field('kdv_phone_header', 'Телефон в шапке сайта', 'fill_kdv_phone_header', 'primer_page', 'section_id' );
 	add_settings_field('kdv_tvit_header', 'Твиттер', 'fill_kdv_tvit_header', 'primer_page', 'section_id' );
 	add_settings_field('kdv_facebook_header', 'Facebook', 'fill_kdv_facebook_header', 'primer_page', 'section_id' );
-	add_settings_field('kdv_adress_header', 'Адрес в шапке сайта', 'fill_kdv_adress_header', 'primer_page', 'section_id' );
-	add_settings_field('kdv_informer', 'Включить информер погоды?', 'fill_option_informer', 'primer_page', 'section_id' );
-	add_settings_field('kdv_copy_footer', 'Текст копирайта в футере', 'fill_kdv_copy_footer', 'primer_page', 'section_id' );
+    add_settings_field('kdv_linke_header', 'LinkeInn', 'fill_kdv_linke_header', 'primer_page', 'section_id' );
+    add_settings_field('kdv_google_header', 'Google +', 'fill_kdv_google_header', 'primer_page', 'section_id' );
+    add_settings_field('kdv_youtube_header', 'YouTube', 'fill_kdv_youtube_header', 'primer_page', 'section_id' );
+    add_settings_field('kdv_rss_header', 'RSS', 'fill_kdv_rss_header', 'primer_page', 'section_id' );
+
 	add_settings_field('kdv_footer_info', 'Дополнительные скрипты в футер', 'fill_kdv_footer_info', 'primer_page', 'section_id' );
-	add_settings_field('kdv_api_yandex_map', 'API Яндекс Карты', 'fill_kdv_api_yandex_map', 'primer_page', 'section_id' );
 }
 
 ## Заполняем опцию 1
@@ -74,28 +75,35 @@ function fill_kdv_facebook_header(){
 	<?php
 }
 
-function fill_kdv_copy_footer(){
+function fill_kdv_linke_header(){
 	$val = get_option('option_name');
-	$val = $val['kdv_copy_footer'];
+	$val = $val['kdv_linke_header'];
 	?>
-	<input type="text" name="option_name[kdv_copy_footer]" style="width: 400px;" value="<?php echo esc_attr( $val ) ?>" />
+	<input type="text" name="option_name[kdv_linke_header]" style="width: 400px;" value="<?php echo esc_attr( $val ) ?>" />
 	<?php
 }
 
-function fill_kdv_adress_header(){
+function fill_kdv_google_header(){
 	$val = get_option('option_name');
-	$val = $val['kdv_adress_header'];
+	$val = $val['kdv_google_header'];
 	?>
-	<textarea name="option_name[kdv_adress_header]" style="width: 400px; height: 150px;"><?php echo esc_attr( $val ) ?></textarea>
+	<input type="text" name="option_name[kdv_google_header]" style="width: 400px;" value="<?php echo esc_attr( $val ) ?>" />
 	<?php
 }
 
-## Опция отображения иформера погоды
-function fill_option_informer(){
+function fill_kdv_youtube_header(){
 	$val = get_option('option_name');
-	$val = $val['kdv_informer'];
+	$val = $val['kdv_youtube_header'];
 	?>
-	<label><input type="checkbox" name="option_name[kdv_informer]" value="1" <?php checked( 1, $val ) ?> /> Да</label>
+	<input type="text" name="option_name[kdv_youtube_header]" style="width: 400px;" value="<?php echo esc_attr( $val ) ?>" />
+	<?php
+}
+
+function fill_kdv_rss_header(){
+	$val = get_option('option_name');
+	$val = $val['kdv_rss_header'];
+	?>
+	<input type="text" name="option_name[kdv_rss_header]" style="width: 400px;" value="<?php echo esc_attr( $val ) ?>" />
 	<?php
 }
 
@@ -104,13 +112,6 @@ function fill_kdv_footer_info(){
 	$val = $val['kdv_footer_info'];
 	?>
 	<textarea name="option_name[kdv_footer_info]" style="width: 400px; height: 150px;"><?php echo esc_attr( $val ) ?></textarea>
-	<?php
-}
-function fill_kdv_api_yandex_map(){
-	$val = get_option('option_name');
-	$val = $val['kdv_api_yandex_map'];
-	?>
-	<textarea name="option_name[kdv_api_yandex_map]" style="width: 400px; height: 150px;"><?php echo esc_attr( $val ) ?></textarea>
 	<?php
 }
 
