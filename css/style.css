@@ -1,4 +1,12 @@
-
+@font-face {
+    font-family: "ImpactRegular";
+    src: url("../fonts/ImpactRegular.eot");
+    src: url("../fonts/ImpactRegular.eot?#iefix")format("embedded-opentype"),
+    url("../fonts/ImpactRegular.woff") format("woff"),
+    url("../fonts/ImpactRegular.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
 @font-face {
     font-family: "Proxima Nova W01";
     src: url("../fonts/ProximaNovaRegular.eot");
@@ -1274,10 +1282,10 @@ body > .category {
 #hero h1 {
   color: #fff;
   text-align: center;
-  font: 18rem/10rem "tungsten-medium", "Helvetica", san-serif;
+  font: 18rem/10rem "ImpactRegular", "Helvetica", san-serif;
   font-size: 18rem;
   line-height: 14rem;
-  font-family: "tungsten-semibold", "Helvetica", san-serif;
+  font-family: "ImpactRegular", "Helvetica", san-serif;
   text-transform: uppercase;
   opacity: 0.5;
   z-index: 0;
