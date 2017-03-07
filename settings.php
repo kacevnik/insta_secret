@@ -46,6 +46,7 @@ function plugin_settings(){
     add_settings_field('kdv_youtube_header', 'YouTube', 'fill_kdv_youtube_header', 'primer_page', 'section_id' );
     add_settings_field('kdv_rss_header', 'RSS', 'fill_kdv_rss_header', 'primer_page', 'section_id' );
     add_settings_field('kdv_posts_main', 'Количество постов на главной', 'fill_kdv_posts_main', 'primer_page', 'section_id' );
+    add_settings_field('kdv_posts_in_post', 'ID постов для интересного', 'fill_posts_in_post', 'primer_page', 'section_id' );
 
 	add_settings_field('kdv_footer_info', 'Дополнительные скрипты в футер', 'fill_kdv_footer_info', 'primer_page', 'section_id' );
 }
@@ -113,6 +114,15 @@ function fill_kdv_posts_main(){
 	$val = $val['kdv_posts_main'];
 	?>
 	<input name="option_name[kdv_posts_main]" type="number" step="1" min="1" id="option_name[kdv_posts_main]" value="<?php echo esc_attr( $val ) ?>" class="small-text"> постов
+	<?php
+}
+
+function fill_posts_in_post(){
+	$val = get_option('option_name');
+	$val = $val['kdv_posts_in_post'];
+	?>
+	<input type="text" name="option_name[kdv_posts_in_post]" style="width: 400px;" value="<?php echo esc_attr( $val ) ?>" />
+	<p class="description" id="kdv_posts_in_post_description">Укажите ID постов, каторые вы хотите видет в блоке интересное через запятую</p>
 	<?php
 }
 
