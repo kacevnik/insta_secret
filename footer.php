@@ -4,76 +4,6 @@
  */
 	$theme_options = get_option('option_name');
 ?>
-<script type="text/javascript">
-            //Apply javascript to new posts being loaded in by infinite scroll
-            function titlePadding(){
-                $videoHeight = $('.box-sm > img').height();
-                $containerHeight = $('.box-content > h4').height();
-                $backgroundTop = $videoHeight - $containerHeight;
-                $backgroundTop = $backgroundTop - 120;
-                $('.box-content > h4').css('padding-top', $backgroundTop);
-                $('.blog-item').hover(function(){
-                    $backgroundTop = 0;
-                    if($backgroundTop < 0){
-                        $backgroundTop = 0;
-                    }
-                    $(".box-content > h4", this).css('padding-top', $backgroundTop);
-                }, function(){
-                    //Reset backgroundTop value to prevent stacking negatives
-                    $videoHeight = $('.box-sm > img').height();
-                    $containerHeight = $('.box-content > h4').height();
-                    $backgroundTop = $videoHeight - $containerHeight;
-                    $backgroundTop = $backgroundTop - 120;
-                    $(".box-content > h4", this).css('padding-top', $backgroundTop); 
-                });
-            };
-            $('.blog-item').hover(function(){
-                $backgroundTop = 0
-                if($backgroundTop < 0){
-                    $backgroundTop = 0;
-                }
-                $(".box-content > h4", this).css('padding-top', $backgroundTop);
-            }, function(){
-                $videoHeight = $('.box-sm > img').height();
-                $containerHeight = $('.box-content > h4').height();
-                $backgroundTop = $videoHeight - $containerHeight;
-                $backgroundTop = $backgroundTop - 120;
-                $(".box-content > h4", this).css('padding-top', $backgroundTop); 
-            });
-            $(document).ready(function(){
-                //Set h4 height and hover state for blog posts
-                $videoHeight = $('.box-sm > img').height();
-                $containerHeight = $('.box-content > h4').height();
-                $backgroundTop = $videoHeight - $containerHeight;
-                $backgroundTop = $backgroundTop - 120;
-                $('.box-content > h4').css('padding-top', $backgroundTop);
-                $('.blog-item').hover(function(){
-                $backgroundTop = 0;
-                if($backgroundTop < 0){
-                    $backgroundTop = 0;
-                }
-                $(".box-content > h4", this).css('padding-top', $backgroundTop);
-                }, function(){
-                    $videoHeight = $('.box-sm > img').height();
-                    $containerHeight = $('.box-content > h4').height();
-                    $backgroundTop = $videoHeight - $containerHeight;
-                    $backgroundTop = $backgroundTop - 120;
-                    $(".box-content > h4", this).css('padding-top', $backgroundTop); 
-                });
-
-            })  ;         
-    
-    
-            $(window).resize(function(){
-                $videoHeight = $('.box-sm > img').height();
-                $containerHeight = $('.box-content > h4').height();
-                $backgroundTop = $videoHeight - $containerHeight;
-                $backgroundTop = $backgroundTop - 120;
-                $('.box-content > h4').css('padding-top', $backgroundTop);
-            });
-    
-</script>
-
   <div id="footer-wrapper">
     <footer id="sub-footer">
       <div class="container-fluid">
@@ -122,6 +52,7 @@
         <p class="left">&copy; <?php echo date("Y")." "; bloginfo( $string ); ?>. Все права защещены.</p>
     </div>
   </div>
+  <?php wp_footer(); // необходимо для работы плагинов и функционала  ?>
 <?php echo $theme_options['kdv_footer_info']; ?>
 </body>
 </html>

@@ -1,31 +1,87 @@
 <?php
 /**
  * Шаблон отдельной записи (single.php)
- * @package WordPress
- * @subpackage your-clean-template-3
  */
 get_header(); // подключаем header.php ?>
+<section id="hero-general">
+    <div id="background" style="background-color: #000000;"></div>    
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12">
+          <h1><?php the_title(); // заголовок поста ?></h1>
+          <p class="sub-text"><?php echo get_the_excerpt(); ?></p>
+        </div>
+      </div>
+    </div>
+</section>
+<section class="lead-magnet" style="margin-bottom: 40px;">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12 text-center center">
+          <p><span>Новый подробный чек-лист</span> Как не попасть в бан инстаграмм?</p>
+          <a id="subnav-cta-button" class="opt-in-form btn btn-md" href="#">Скачать</a> </div>
+      </div>
+    </div>
+</section>
 <section>
 	<div class="container">
 		<div class="row">
-			<div class="<?php content_class_by_sidebar(); // функция подставит класс в зависимости от того есть ли сайдбар, лежит в functions.php ?>">
 				<?php if ( have_posts() ) while ( have_posts() ) : the_post(); // старт цикла ?>
 					<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>> <?php // контэйнер с классами и id ?>
-						<h1><?php the_title(); // заголовок поста ?></h1>
-						<div class="meta">
-							<p>Опубликовано: <?php the_time(get_option('date_format')." в ".get_option('time_format')); ?></p> <?php // дата и время создания ?>
-							<p>Автор:  <?php the_author_posts_link(); ?></p>
-							<p>Категории: <?php the_category(',') ?></p> <?php // ссылки на категории в которых опубликован пост, через зпт ?>
-							<?php the_tags('<p>Тэги: ', ',', '</p>'); // ссылки на тэги поста ?>
-						</div>
 						<?php the_content(); // контент ?>
 					</article>
 				<?php endwhile; // конец цикла ?>
-				<?php previous_post_link('%link', '<- Предыдущий пост: %title', TRUE); // ссылка на предыдущий пост ?> 
-				<?php next_post_link('%link', 'Следующий пост: %title ->', TRUE); // ссылка на следующий пост ?> 
-				<?php if (comments_open() || get_comments_number()) comments_template('', true); // если комментирование открыто - мы покажем список комментариев и форму, если закрыто, но кол-во комментов > 0 - покажем только список комментариев ?>
-			</div>
-			<?php get_sidebar(); // подключаем sidebar.php ?>
+		</div>
+	</div>
+</section>
+<section>
+	<div class="container">
+		<div class="row">
+		<h3>Blog</h3>
+		<?php 
+		$args = array(
+	'numberposts' => 6,
+	'post_status' => 'publish',
+); 
+
+$result = wp_get_recent_posts($args);
+
+foreach( $result as $p ){ 
+
+$cat = get_the_category($p['ID']);
+$cat_id =  $cat[0]->cat_ID;
+$cat_data = get_option("category_$cat_id");  
+$cat_data['cat_color'];
+$new_class_cat = "cat_class_".$cat_id;
+?>
+<?php if($cat_data['cat_color'] != ""){ ?>
+<style>
+	.<?php echo $new_class_cat; ?>.blog-item:hover .box-content{
+		background: none;
+    	opacity: 1;
+    	background-color: #<?php echo $cat_data['cat_color']; ?>;
+	}
+
+	.<?php echo $new_class_cat; ?> .blog-line {
+    	background-color: #<?php echo $cat_data['cat_color']; ?>;
+	}
+</style>
+<?php } ?>
+<div class="col-md-3 blog-item<?php echo " ".$new_class_cat; ?>">
+    <div class="box box-sm"  style="cursor:pointer;"  onclick="document.location='<?php echo get_permalink($p['ID']); ?>'">
+        <a href="<?php echo get_permalink($p['ID']); ?>"></a>
+        <img onload="titlePadding()"  src="<?php echo get_the_post_thumbnail_url($p['ID']); ?>" alt="">
+        <div class="box-content">
+	        <?php echo get_the_category_list(',', '', $p['ID']) ?>
+	        <h4 class="promotion"><?php echo $p['post_title']; ?></h4>
+	        <div class="blog-line"></div>
+	        <p class="subtitle"><?php echo get_the_excerpt($p['ID']); ?></p>
+        </div>
+    </div>
+</div>
+
+ <?php } ?>
+
 		</div>
 	</div>
 </section>

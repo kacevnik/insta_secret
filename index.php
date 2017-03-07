@@ -29,5 +29,74 @@ if($theme_options['kdv_posts_main'] != ''){$per_page = $theme_options['kdv_posts
       </div>
     </div>
   </section>
+  <script type="text/javascript">
+            //Apply javascript to new posts being loaded in by infinite scroll
+            function titlePadding(){
+                $videoHeight = $('.box-sm > img').height();
+                $containerHeight = $('.box-content > h4').height();
+                $backgroundTop = $videoHeight - $containerHeight;
+                $backgroundTop = $backgroundTop - 120;
+                $('.box-content > h4').css('padding-top', $backgroundTop);
+                $('.blog-item').hover(function(){
+                    $backgroundTop = 0;
+                    if($backgroundTop < 0){
+                        $backgroundTop = 0;
+                    }
+                    $(".box-content > h4", this).css('padding-top', $backgroundTop);
+                }, function(){
+                    //Reset backgroundTop value to prevent stacking negatives
+                    $videoHeight = $('.box-sm > img').height();
+                    $containerHeight = $('.box-content > h4').height();
+                    $backgroundTop = $videoHeight - $containerHeight;
+                    $backgroundTop = $backgroundTop - 120;
+                    $(".box-content > h4", this).css('padding-top', $backgroundTop); 
+                });
+            };
+            $('.blog-item').hover(function(){
+                $backgroundTop = 0
+                if($backgroundTop < 0){
+                    $backgroundTop = 0;
+                }
+                $(".box-content > h4", this).css('padding-top', $backgroundTop);
+            }, function(){
+                $videoHeight = $('.box-sm > img').height();
+                $containerHeight = $('.box-content > h4').height();
+                $backgroundTop = $videoHeight - $containerHeight;
+                $backgroundTop = $backgroundTop - 120;
+                $(".box-content > h4", this).css('padding-top', $backgroundTop); 
+            });
+            $(document).ready(function(){
+                //Set h4 height and hover state for blog posts
+                $videoHeight = $('.box-sm > img').height();
+                $containerHeight = $('.box-content > h4').height();
+                $backgroundTop = $videoHeight - $containerHeight;
+                $backgroundTop = $backgroundTop - 120;
+                $('.box-content > h4').css('padding-top', $backgroundTop);
+                $('.blog-item').hover(function(){
+                $backgroundTop = 0;
+                if($backgroundTop < 0){
+                    $backgroundTop = 0;
+                }
+                $(".box-content > h4", this).css('padding-top', $backgroundTop);
+                }, function(){
+                    $videoHeight = $('.box-sm > img').height();
+                    $containerHeight = $('.box-content > h4').height();
+                    $backgroundTop = $videoHeight - $containerHeight;
+                    $backgroundTop = $backgroundTop - 120;
+                    $(".box-content > h4", this).css('padding-top', $backgroundTop); 
+                });
+
+            })  ;         
+    
+    
+            $(window).resize(function(){
+                $videoHeight = $('.box-sm > img').height();
+                $containerHeight = $('.box-content > h4').height();
+                $backgroundTop = $videoHeight - $containerHeight;
+                $backgroundTop = $backgroundTop - 120;
+                $('.box-content > h4').css('padding-top', $backgroundTop);
+            });
+    
+</script>
 
 <?php get_footer(); // подключаем footer.php ?>
