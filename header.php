@@ -284,7 +284,8 @@ analytics.page()
 							?>       </div>
     </div>
   </div>
-
+<?php if( is_front_page() ) { ?>
+   
     <section id="hero">
 
     <div class="container-fluid">
@@ -334,3 +335,4 @@ analytics.page()
 
         </div> <!-- Carousel -->
   </section>
+  <?php } ?>
