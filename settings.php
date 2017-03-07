@@ -45,6 +45,7 @@ function plugin_settings(){
     add_settings_field('kdv_google_header', 'Google +', 'fill_kdv_google_header', 'primer_page', 'section_id' );
     add_settings_field('kdv_youtube_header', 'YouTube', 'fill_kdv_youtube_header', 'primer_page', 'section_id' );
     add_settings_field('kdv_rss_header', 'RSS', 'fill_kdv_rss_header', 'primer_page', 'section_id' );
+    add_settings_field('kdv_posts_main', 'Количество постов на главной', 'fill_kdv_posts_main', 'primer_page', 'section_id' );
 
 	add_settings_field('kdv_footer_info', 'Дополнительные скрипты в футер', 'fill_kdv_footer_info', 'primer_page', 'section_id' );
 }
@@ -104,6 +105,14 @@ function fill_kdv_rss_header(){
 	$val = $val['kdv_rss_header'];
 	?>
 	<input type="text" name="option_name[kdv_rss_header]" style="width: 400px;" value="<?php echo esc_attr( $val ) ?>" />
+	<?php
+}
+
+function fill_kdv_posts_main(){
+	$val = get_option('option_name');
+	$val = $val['kdv_posts_main'];
+	?>
+	<input name="option_name[kdv_posts_main]" type="number" step="1" min="1" id="option_name[kdv_posts_main]" value="<?php echo esc_attr( $val ) ?>" class="small-text"> постов
 	<?php
 }
 

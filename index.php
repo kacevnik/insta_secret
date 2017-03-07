@@ -2,7 +2,11 @@
 /**
  * Главная страница (index.php)
  */
-get_header(); // подключаем header.php ?> 
+get_header(); // подключаем header.php 
+$count = 0;
+$theme_options = get_option('option_name');
+if($theme_options['kdv_posts_main'] != ''){$per_page = $theme_options['kdv_posts_main'];}else{$per_page = 4;}
+?> 
 
   <section id="latest-news">
     <div class="container">
@@ -16,10 +20,11 @@ get_header(); // подключаем header.php ?>
 					else : 'Archives';
 				endif; ?></h1>
 				<?php if (have_posts()) : while (have_posts()) : the_post(); // если посты есть - запускаем цикл wp ?>
+					<?php if($count == $per_page){break;}?>
 					<?php get_template_part('loop'); // для отображения каждой записи берем шаблон loop.php ?>
+					<?php $count++?>
 				<?php endwhile; // конец цикла
 				else: echo '<p>Нет записей.</p>'; endif; // если записей нет, напишим "простите" ?>	 
-				<?php pagination(); // пагинация, функция нах-ся в function.php ?>
         </div>
       </div>
     </div>
