@@ -4970,8 +4970,7 @@ nav ul li div#login-content a.forgot-password {
 .header-socials ul {
   float: left;
   padding: 0 0 0 5px;
-  margin: 12px 0 0 10px;
-  border-left: 1px solid #fff;
+  margin: 12px 0 0 0;
   line-height: 15px;
 }
 

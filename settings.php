@@ -38,13 +38,12 @@ function plugin_settings(){
 	add_settings_section( 'section_id', 'Основные настройки', '', 'primer_page' );  
 
 	// параметры: $id, $title, $callback, $page, $section, $args
-	add_settings_field('kdv_phone_header', 'Телефон в шапке сайта', 'fill_kdv_phone_header', 'primer_page', 'section_id' );
-	add_settings_field('kdv_tvit_header', 'Твиттер', 'fill_kdv_tvit_header', 'primer_page', 'section_id' );
+	add_settings_field('kdv_email_header', 'E-mail для связи', 'fill_kdv_email_header', 'primer_page', 'section_id' );
+	add_settings_field('kdv_insta_header', 'Инстаграм', 'fill_kdv_insta_header', 'primer_page', 'section_id' );
 	add_settings_field('kdv_facebook_header', 'Facebook', 'fill_kdv_facebook_header', 'primer_page', 'section_id' );
-    add_settings_field('kdv_linke_header', 'LinkeInn', 'fill_kdv_linke_header', 'primer_page', 'section_id' );
-    add_settings_field('kdv_google_header', 'Google +', 'fill_kdv_google_header', 'primer_page', 'section_id' );
+    add_settings_field('kdv_periscope_header', 'Periscope', 'fill_kdv_periscope_header', 'primer_page', 'section_id' );
+    add_settings_field('kdv_vk_header', 'В контакте', 'fill_kdv_vk_header', 'primer_page', 'section_id' );
     add_settings_field('kdv_youtube_header', 'YouTube', 'fill_kdv_youtube_header', 'primer_page', 'section_id' );
-    add_settings_field('kdv_rss_header', 'RSS', 'fill_kdv_rss_header', 'primer_page', 'section_id' );
     add_settings_field('kdv_posts_main', 'Количество постов на главной', 'fill_kdv_posts_main', 'primer_page', 'section_id' );
     add_settings_field('kdv_posts_in_post', 'ID постов для интересного', 'fill_posts_in_post', 'primer_page', 'section_id' );
 
@@ -53,19 +52,19 @@ function plugin_settings(){
 
 ## Заполняем опцию 1
 
-function fill_kdv_phone_header(){
+function fill_kdv_email_header(){
 	$val = get_option('option_name');
-	$val = $val['kdv_phone_header'];
+	$val = $val['kdv_email_header'];
 	?>
-	<input type="text" name="option_name[kdv_phone_header]" style="width: 400px;" value="<?php echo esc_attr( $val ) ?>" />
+	<input type="text" name="option_name[kdv_email_header]" style="width: 400px;" value="<?php echo esc_attr( $val ) ?>" />
 	<?php
 }
 
-function fill_kdv_tvit_header(){
+function fill_kdv_insta_header(){
 	$val = get_option('option_name');
-	$val = $val['kdv_tvit_header'];
+	$val = $val['kdv_insta_header'];
 	?>
-	<input type="text" name="option_name[kdv_tvit_header]" style="width: 400px;" value="<?php echo esc_attr( $val ) ?>" />
+	<input type="text" name="option_name[kdv_insta_header]" style="width: 400px;" value="<?php echo esc_attr( $val ) ?>" />
 	<?php
 }
 
@@ -77,19 +76,19 @@ function fill_kdv_facebook_header(){
 	<?php
 }
 
-function fill_kdv_linke_header(){
+function fill_kdv_periscope_header(){
 	$val = get_option('option_name');
-	$val = $val['kdv_linke_header'];
+	$val = $val['kdv_periscope_header'];
 	?>
-	<input type="text" name="option_name[kdv_linke_header]" style="width: 400px;" value="<?php echo esc_attr( $val ) ?>" />
+	<input type="text" name="option_name[kdv_periscope_header]" style="width: 400px;" value="<?php echo esc_attr( $val ) ?>" />
 	<?php
 }
 
-function fill_kdv_google_header(){
+function fill_kdv_vk_header(){
 	$val = get_option('option_name');
-	$val = $val['kdv_google_header'];
+	$val = $val['kdv_vk_header'];
 	?>
-	<input type="text" name="option_name[kdv_google_header]" style="width: 400px;" value="<?php echo esc_attr( $val ) ?>" />
+	<input type="text" name="option_name[kdv_vk_header]" style="width: 400px;" value="<?php echo esc_attr( $val ) ?>" />
 	<?php
 }
 
@@ -98,14 +97,6 @@ function fill_kdv_youtube_header(){
 	$val = $val['kdv_youtube_header'];
 	?>
 	<input type="text" name="option_name[kdv_youtube_header]" style="width: 400px;" value="<?php echo esc_attr( $val ) ?>" />
-	<?php
-}
-
-function fill_kdv_rss_header(){
-	$val = get_option('option_name');
-	$val = $val['kdv_rss_header'];
-	?>
-	<input type="text" name="option_name[kdv_rss_header]" style="width: 400px;" value="<?php echo esc_attr( $val ) ?>" />
 	<?php
 }
 

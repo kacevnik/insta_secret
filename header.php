@@ -89,21 +89,39 @@ analytics.page()
     <div id="header-bar-desktop" class="header-bar">
         <div class="header-container">
             <div class="header-socials">
-                <p class="phone">
-                    <a href='<?php echo $theme_options['kdv_phone_header']; ?>' class='phonenumber'><span class='mm-phone-number'><?php echo $theme_options['kdv_phone_header']; ?></span><i class='fa fa-fw fa-lg fa-phone'></i></a>
-                </p><!-- /.phone -->
-
                 <ul>
-                	<?php if($theme_options['kdv_facebook_header'] != ''){ ?> 
+                    <?php if($theme_options['kdv_email_header'] != ''){ ?> 
+                    <li>
+                        <a href="mailto:<?php echo $theme_options['kdv_email_header']; ?>" target="_blank">
+                            <i class="fa fa-envelope"></i>
+                        </a>
+                    </li>
+                    <?php } if($theme_options['kdv_insta_header'] != ''){ ?> 
+                    <li>
+                        <a href="<?php echo $theme_options['kdv_insta_header']; ?>" target="_blank">
+                            <i class="fa fa-instagram"></i>
+                        </a>
+                    </li>
+                    <?php } if($theme_options['kdv_periscope_header'] != ''){ ?> 
+                    <li>
+                        <a href="<?php echo $theme_options['kdv_periscope_header']; ?>" target="_blank">
+                            <img src="<?php bloginfo( 'template_url' ); ?>/img/periscope.png" style="margin: -4px 0 0 0; width: 14px;">
+                        </a>
+                    </li>
+                    <?php } if($theme_options['kdv_youtube_header'] != ''){ ?>
+                    <li>
+                        <a href="<?php echo $theme_options['kdv_youtube_header']; ?>" target="_blank"><i class="fa fa-youtube"></i></a>
+                    </li>
+                	<?php } if($theme_options['kdv_facebook_header'] != ''){ ?> 
                     <li>
                         <a href="<?php echo $theme_options['kdv_facebook_header']; ?>" target="_blank">
                             <i class="fa fa-facebook"></i>
                         </a>
                     </li>
-					<?php } if($theme_options['kdv_tvit_header'] != ''){ ?> 
+					<?php } if($theme_options['kdv_vk_header'] != ''){ ?> 
                     <li>
-                        <a href="<?php echo $theme_options['kdv_tvit_header']; ?>" target="_blank">
-                            <i class="fa fa-twitter"></i>
+                        <a href="<?php echo $theme_options['kdv_vk_header']; ?>" target="_blank">
+                            <i class="fa fa-vk"></i>
                         </a>
                     </li>
                     <?php } ?>
@@ -112,43 +130,13 @@ analytics.page()
 
             <div class="nav-utilities">
                 <ul>
-                    <li class="nav-item hidden-xs hidden-sm" id="login">
-                        <a href="#" class="login-trigger" id="members-portal">Вход</a>
-
-                        <div id="login-content">
-                            <form name="loginForm" class="form-horizontal" id="loginForm" method="POST" action="/members/index.php">
-                                <div class="form-group">
-                                    <label >Email:</label>
-                                    <div class="input-container">
-                                        <input type="text" class="form-control" name="username" size="30" />
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-                                    <label>Password:</label>
-                                    <div class="input-container">
-                                        <input type="password" class="form-control" name="password" size="30" />
-                                    </div>
-                                </div>
-
-
-                                <div class="form-group row log-in-container">
-                                    <div class="col-sm-5">
-                                        <div class="input-container">
-                                            <button class="btn btn-main" name='submit' type='submit'>Login</button>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-7">
-                                        <div class="input-container">
-                                            <a href="#" class="forgot-password" onClick="javascript:nw=window.open('/inc/salesforce/email_password.php','EmailPassword','width=350,height=400,toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=no,resizable=no')">&raquo; Forgot your  password?</a>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </form>
-
-                        </div>
+                <?php if($theme_options['kdv_email_header'] != ''){ ?> 
+                    <li>
+                        <a href="mailto:<?php echo $theme_options['kdv_email_header']; ?>" target="_blank">
+                            <?php echo $theme_options['kdv_email_header']; ?>
+                        </a>
                     </li>
+                    <?php } ?>
                 </ul>
             </div><!-- /.nav-utilities -->
         </div>
