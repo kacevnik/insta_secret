@@ -14,31 +14,41 @@
               <div class="widget">
                 <h4>Свяжитесь с нами</h4>
                 <ul class="socialmedia">
-                	<?php if($theme_options['kdv_facebook_header'] != ''){ ?>
+                    <?php if($theme_options['kdv_email_header'] != ''){ ?> 
                     <li>
-                    	<a href="<?php echo $theme_options['kdv_facebook_header']; ?>" target="_blank"><i class="fa fa-facebook"></i></a>
+                        <a href="mailto:<?php echo $theme_options['kdv_email_header']; ?>" target="_blank">
+                            <i class="fa fa-envelope"></i>
+                        </a>
                     </li>
-                    <?php } if($theme_options['kdv_tvit_header'] != ''){ ?>
+                    <?php } if($theme_options['kdv_insta_header'] != ''){ ?> 
                     <li>
-                    	<a href="<?php echo $theme_options['kdv_tvit_header']; ?>" target="_blank"><i class="fa fa-twitter"></i></a>
+                        <a href="<?php echo $theme_options['kdv_insta_header']; ?>" target="_blank">
+                            <i class="fa fa-instagram"></i>
+                        </a>
                     </li>
-                    <?php } if($theme_options['kdv_linke_header'] != ''){ ?>
-                	<li>
-                		<a href="<?php echo $theme_options['kdv_linke_header']; ?>" target="_blank"><i class="fa fa-linkedin"></i></a>
-                	</li>
-                	<?php } if($theme_options['kdv_google_header'] != ''){ ?>
-                	<li>
-                		<a href="<?php echo $theme_options['kdv_google_header']; ?>" target="_blank"><i class="fa fa-google-plus"></i></a>
-                	</li>
-                	<?php } if($theme_options['kdv_youtube_header'] != ''){ ?>
-                	<li>
-                		<a href="<?php echo $theme_options['kdv_youtube_header']; ?>" target="_blank"><i class="fa fa-youtube"></i></a>
-                	</li>
-                	<?php } if($theme_options['kdv_rss_header'] != ''){ ?>
-                	<li>
-                		<a href="<?php echo $theme_options['kdv_rss_header']; ?>" target="_blank"><i class="fa fa-rss-square"></i></a>
-                	</li>
-                	<?php } ?>
+                    <?php } if($theme_options['kdv_periscope_header'] != ''){ ?> 
+                    <li>
+                        <a href="<?php echo $theme_options['kdv_periscope_header']; ?>" target="_blank">
+                            <img src="<?php bloginfo( 'template_url' ); ?>/img/periscope.png" style="margin: -4px 0 0 0; width: 14px;">
+                        </a>
+                    </li>
+                    <?php } if($theme_options['kdv_youtube_header'] != ''){ ?>
+                    <li>
+                        <a href="<?php echo $theme_options['kdv_youtube_header']; ?>" target="_blank"><i class="fa fa-youtube"></i></a>
+                    </li>
+                    <?php } if($theme_options['kdv_facebook_header'] != ''){ ?> 
+                    <li>
+                        <a href="<?php echo $theme_options['kdv_facebook_header']; ?>" target="_blank">
+                            <i class="fa fa-facebook"></i>
+                        </a>
+                    </li>
+                    <?php } if($theme_options['kdv_vk_header'] != ''){ ?> 
+                    <li>
+                        <a href="<?php echo $theme_options['kdv_vk_header']; ?>" target="_blank">
+                            <i class="fa fa-vk"></i>
+                        </a>
+                    </li>
+                    <?php } ?>
                 </ul>
               </div>
             </article>
