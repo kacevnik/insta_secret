@@ -73,7 +73,7 @@ function kdv_footer_info(){
         }
     }
 }
-add_action('wp_footer', 'kdv_footer_info')
+add_action('wp_footer', 'kdv_footer_info');
 
  // добавляет вызов функции при инициализации административного раздела
 add_action('admin_init', 'category_custom_fields', 1);
